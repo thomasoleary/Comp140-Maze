@@ -20,26 +20,26 @@ public class TestRotate : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow))
         {
             // Rotate on the Z Axis fowards
-            Debug.Log("Up");
+            //Debug.Log("Up");
             transform.Rotate(Vector3.forward * RotationSpeed * Time.deltaTime);
 
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
             // Rotate on the Z Axis backwards
-            Debug.Log("Backwards");
+            //Debug.Log("Backwards");
             transform.Rotate(Vector3.back * RotationSpeed * Time.deltaTime);
         }
         if(Input.GetKey(KeyCode.RightArrow))
         {
             // Rotate on the X Axis right
-            Debug.Log("Right");
+            //Debug.Log("Right");
             transform.Rotate(Vector3.right * RotationSpeed * Time.deltaTime);
         }
         if(Input.GetKey(KeyCode.LeftArrow))
         {
             // Rotate on the X Axis left
-            Debug.Log("Left"); 
+            //Debug.Log("Left"); 
             transform.Rotate(Vector3.left * RotationSpeed * Time.deltaTime);
         }
     }

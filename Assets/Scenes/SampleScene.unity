@@ -122,8 +122,9 @@ GameObject:
   m_Component:
   - component: {fileID: 57607441}
   - component: {fileID: 57607442}
+  - component: {fileID: 57607443}
   m_Layer: 0
-  m_Name: RightCollider
+  m_Name: RightCollider (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,6 +157,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.25, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0.4}
+--- !u!114 &57607443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57607440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c8793de6fc23ac4aa2e8c81a3f91b2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motorInteger: 3
+  ballTriggered: 0
 --- !u!1 &62960420
 GameObject:
   m_ObjectHideFlags: 0
@@ -1633,8 +1648,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1071075932}
   - component: {fileID: 1071075933}
+  - component: {fileID: 1071075934}
   m_Layer: 0
-  m_Name: LeftCollider
+  m_Name: LeftCollider (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1667,6 +1683,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.25, z: 0.1}
   m_Center: {x: 0, y: 0, z: -0.4}
+--- !u!114 &1071075934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071075931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c8793de6fc23ac4aa2e8c81a3f91b2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motorInteger: 2
+  ballTriggered: 0
 --- !u!1 &1088614689
 GameObject:
   m_ObjectHideFlags: 0
@@ -1859,8 +1889,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1178348959}
   - component: {fileID: 1178348960}
+  - component: {fileID: 1178348961}
   m_Layer: 0
-  m_Name: FrontCollider
+  m_Name: FrontCollider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1893,6 +1924,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.25, z: 0.5}
   m_Center: {x: -0.4, y: 0, z: 0}
+--- !u!114 &1178348961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178348958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c8793de6fc23ac4aa2e8c81a3f91b2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motorInteger: 1
+  ballTriggered: 0
 --- !u!1 &1178379792
 GameObject:
   m_ObjectHideFlags: 0
@@ -2368,7 +2413,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1446183739
 Transform:
   m_ObjectHideFlags: 0
@@ -2470,10 +2515,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1446183738}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c8793de6fc23ac4aa2e8c81a3f91b2f, type: 3}
+  m_Script: {fileID: 11500000, guid: efacf9bce51a66f42bbf19ad8eefb84c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  commPort: 0
+  commPort: 5
+  controllerActive: 1
+  frontTrigger: {fileID: 1178348958}
+  leftTrigger: {fileID: 1071075931}
+  rightTrigger: {fileID: 57607440}
+  backTrigger: {fileID: 1622487873}
 --- !u!1 &1500033454
 GameObject:
   m_ObjectHideFlags: 0
@@ -2503,7 +2553,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9075a400fa1aa42aa6350d74c232ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  commPort: 0
+  commPort: 5
+  controllerActive: 0
 --- !u!4 &1500033456
 Transform:
   m_ObjectHideFlags: 0
@@ -2528,8 +2579,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1622487874}
   - component: {fileID: 1622487875}
+  - component: {fileID: 1622487876}
   m_Layer: 0
-  m_Name: BackCollider
+  m_Name: BackCollider (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2562,6 +2614,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.25, z: 0.5}
   m_Center: {x: 0.4, y: 0, z: 0}
+--- !u!114 &1622487876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622487873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c8793de6fc23ac4aa2e8c81a3f91b2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motorInteger: 4
+  ballTriggered: 0
 --- !u!1 &1696963125
 GameObject:
   m_ObjectHideFlags: 0

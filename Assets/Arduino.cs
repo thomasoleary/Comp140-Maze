@@ -4,15 +4,24 @@ using System.IO.Ports;
 
 public class Arduino : MonoBehaviour
 {
-
     [SerializeField]
-    private int commPort = 0;
+    private int commPort;
 
     private SerialPort serial = null;
+
+    public bool controllerActive = false;
 
     void Start()
     {
         ConnectToSerial();
+    }
+
+    void Update()
+    {
+        if (controllerActive)
+        {
+            WriteToArduino("1");
+        }
     }
 
     void ConnectToSerial()
@@ -21,11 +30,13 @@ public class Arduino : MonoBehaviour
 
         serial = new SerialPort("\\\\.\\COM" + commPort, 9600);
         serial.ReadTimeout = 50;
+        //serial.WriteTimeout = 1;
         serial.Open();
     }
 
-    void WriteToArduino(string motor)
+    public void WriteToArduino(string motor)
     {
+        serial.WriteTimeout = 1;
         serial.WriteLine(motor);
         serial.BaseStream.Flush();
     }
