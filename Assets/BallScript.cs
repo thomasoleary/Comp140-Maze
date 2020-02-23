@@ -14,7 +14,6 @@ public class BallScript : Arduino
     GameObject backTrigger;
 
 
-
     private void FixedUpdate()
     {
         if (frontTrigger.GetComponent<BallTrigger>().ballTriggered)
@@ -25,14 +24,17 @@ public class BallScript : Arduino
         if (leftTrigger.GetComponent<BallTrigger>().ballTriggered)
         {
             Debug.Log("Left trigger is triggered");
+            WriteToArduino("2");
         }
         if (rightTrigger.GetComponent<BallTrigger>().ballTriggered)
         {
             Debug.Log("Right trigger is triggered");
+            WriteToArduino("3");
         }
         if (backTrigger.GetComponent<BallTrigger>().ballTriggered)
         {
             Debug.Log("Back trigger is triggered");
+            WriteToArduino("4");
         }
     }
 

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BallTrigger : MonoBehaviour
 {
-    [SerializeField]
-    int motorInteger;
+    
+    public int motorInteger;
 
     private string motorNumber;
 
