@@ -35,19 +35,19 @@ public class BallScript : Arduino
         // This will do a digitalWrite() to activate the assigned motor
         if (forwardCollision)
         {
-            WriteToArduino("1");
+            WriteToArduino("1"); // Activates front motor
         }
         if (leftCollision)
         {
-            WriteToArduino("2");
+            WriteToArduino("2"); // Activates left motor
         }
         if (rightCollision)
         {
-            WriteToArduino("3");
+            WriteToArduino("3"); // Activates right motor
         }
         if (backwardCollision)
         {
-            WriteToArduino("4");
+            WriteToArduino("4"); // Activates back motor
         }
     }
 
