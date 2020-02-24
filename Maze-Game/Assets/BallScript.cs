@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BallScript : Arduino
 {
+
+    // Referencing all Trigger colliders on the Ball
     [SerializeField]
     GameObject frontTrigger;
     [SerializeField]
@@ -14,26 +16,37 @@ public class BallScript : Arduino
     GameObject backTrigger;
 
 
+    // Creating booleans for each trigger to reference their individual BallTrigger.cs
+    bool forwardCollision;
+    bool leftCollision;
+    bool rightCollision;
+    bool backwardCollision;
+
     private void FixedUpdate()
     {
-        if (frontTrigger.GetComponent<BallTrigger>().ballTriggered)
+        forwardCollision = frontTrigger.GetComponent<BallTrigger>().ballTriggered;
+        leftCollision = leftTrigger.GetComponent<BallTrigger>().ballTriggered;
+        rightCollision = rightTrigger.GetComponent<BallTrigger>().ballTriggered;
+        backwardCollision = backTrigger.GetComponent<BallTrigger>().ballTriggered;
+
+
+        // When a trigger is activated
+        // It writes to the Arduino's serial
+        // This will do a digitalWrite() to activate the assigned motor
+        if (forwardCollision)
         {
-            Debug.Log("Front trigger is triggered");
             WriteToArduino("1");
         }
-        if (leftTrigger.GetComponent<BallTrigger>().ballTriggered)
+        if (leftCollision)
         {
-            Debug.Log("Left trigger is triggered");
             WriteToArduino("2");
         }
-        if (rightTrigger.GetComponent<BallTrigger>().ballTriggered)
+        if (rightCollision)
         {
-            Debug.Log("Right trigger is triggered");
             WriteToArduino("3");
         }
-        if (backTrigger.GetComponent<BallTrigger>().ballTriggered)
+        if (backwardCollision)
         {
-            Debug.Log("Back trigger is triggered");
             WriteToArduino("4");
         }
     }

@@ -4,18 +4,7 @@ using UnityEngine;
 
 public class BallTrigger : MonoBehaviour
 {
-    
-    public int motorInteger;
-
-    private string motorNumber;
-
     public bool ballTriggered = false;
-
-    private void Start()
-    {
-        motorNumber = motorInteger.ToString();
-        Debug.Log(motorNumber);
-    }
 
     void OnTriggerEnter(Collider other)
     {
