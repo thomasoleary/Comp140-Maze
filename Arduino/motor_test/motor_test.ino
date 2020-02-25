@@ -5,7 +5,7 @@ const int motor4 = 9;
 
 int userInput;
 
-int amountOfDelay = 10; // Delay integer that can be adjusted (in milliseconds)
+int amountOfDelay = 100; // Delay integer that can be adjusted (in milliseconds)
 
 void setup() {
   Serial.begin(9600);
