@@ -18,6 +18,7 @@ public class MoveMaze : Arduino
 
             if(value != null)
             {
+                //pitchoroll
                 string[] values = value.Split('o');
 
                 if(values.Length == 2)
