@@ -31,10 +31,10 @@ public class MoveMaze : Arduino
     void MazeMovement(string[] values)
     {
         // Roll
-        float xRotation = RemapValues(int.Parse(values[1]), -60f, 60f, -30f, 30f);
+        float xRotation = RemapValues(int.Parse(values[1]), -90f, 90f, -30f, 30f);
 
         // Pitch
-        float zRotation = RemapValues(int.Parse(values[0]), -60f, 60f, -30f, 30f);
+        float zRotation = RemapValues(int.Parse(values[0]), -90f, 90f, -30f, 30f);
 
         maze.transform.rotation = Quaternion.Euler(xRotation, transform.rotation.y, zRotation);
     }
