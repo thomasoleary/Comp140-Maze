@@ -1,5 +1,9 @@
 #include <Wire.h>
-#include <MPU6050.h>
+
+// Importing MPU6050 library
+// Available at: https://github.com/jrowberg/i2cdevlib/tree/master/Arduino/MPU6050
+#include <MPU6050.h> 
+
 
 MPU6050 mpu;
 
@@ -27,12 +31,6 @@ void loop()
   int pitch = -(atan2(normAccel.XAxis, sqrt(normAccel.YAxis * normAccel.YAxis + normAccel.ZAxis * normAccel.ZAxis)) * 180.0) / M_PI;
   int roll = (atan2(normAccel.YAxis, normAccel.ZAxis) * 180.0) / M_PI;
 
-  /*
-  Serial.print(" Pitch = ");
-  Serial.print(pitch);
-  Serial.print(" Roll = ");
-  Serial.print(roll);
-  */
   Serial.print(pitch);
   Serial.print("o");
   Serial.println(roll);
