@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.IO.Ports;
+using System.Collections;
 
 public class Arduino : MonoBehaviour
 {
@@ -42,6 +43,19 @@ public class Arduino : MonoBehaviour
     {
         serial.WriteLine(motor); // The string that is provided is then written to the Arduino
         serial.BaseStream.Flush(); // Flush() makes sure that all information in the buffer is sent to its destination
+    }
+
+    public string ReadFromArduino(int timeout = 0)
+    {
+        serial.ReadTimeout = timeout;
+        try
+        {
+            return serial.ReadLine();
+        }
+        catch (TimeoutException e)
+        {
+            return null;
+        }
     }
 
 
