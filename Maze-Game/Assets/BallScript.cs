@@ -22,7 +22,7 @@ public class BallScript : Arduino
     bool rightCollision;
     bool backwardCollision;
 
-    private void FixedUpdate()
+    private void Update()
     {
         forwardCollision = frontTrigger.GetComponent<BallTrigger>().ballTriggered;
         leftCollision = leftTrigger.GetComponent<BallTrigger>().ballTriggered;
