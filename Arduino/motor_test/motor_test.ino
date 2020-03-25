@@ -21,6 +21,7 @@ void loop() {
     userInput = Serial.read();
 
     if(userInput == '1'){
+      Serial.write(userInput);
       motorOne();
     }
     if(userInput == '2'){

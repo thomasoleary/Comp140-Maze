@@ -1,8 +1,6 @@
-#include <Wire.h>
+#include <MPU6050.h>
 
-// Importing MPU6050 library
-// Available at: https://github.com/jrowberg/i2cdevlib/tree/master/Arduino/MPU6050
-#include <MPU6050.h> 
+#include <Wire.h>
 
 
 MPU6050 mpu;
