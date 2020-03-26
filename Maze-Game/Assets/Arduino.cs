@@ -25,7 +25,7 @@ public class Arduino : MonoBehaviour
     void ConnectToSerial()
     {
         // Creates a new SerialPort that connects to the specified COM PORT, with a Baud rate of 9600
-        serial = new SerialPort("\\\\.\\COM" + commPort, 115200);
+        serial = new SerialPort("\\\\.\\COM" + commPort, 9600);
 
         // ReadTimeout of 50 milliseconds
         serial.ReadTimeout = 50;

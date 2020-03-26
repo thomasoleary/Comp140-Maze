@@ -39,7 +39,7 @@ public class BallScript : Arduino
         }
         if (leftCollision)
         {
-            WriteToArduino("2"); // Activates left motor
+            WriteToArduino("0"); // Activates left motor
         }
         if (rightCollision)
         {
@@ -47,7 +47,7 @@ public class BallScript : Arduino
         }
         if (backwardCollision)
         {
-            WriteToArduino("4"); // Activates back motor
+            WriteToArduino("2"); // Activates back motor
         }
     }
 
