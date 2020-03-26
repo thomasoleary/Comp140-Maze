@@ -45,6 +45,16 @@ void loop()
     }
     
   }
+  normalValue = mpu.readNormalizeAccel();
+
+  int pitch = -(atan2(normalValue.XAxis, sqrt(normalValue.YAxis * normalValue.YAxis + normalValue.ZAxis * normalValue.ZAxis)) * 180.0) / M_PI;
+  int roll = (atan2(normalValue.YAxis, normalValue.ZAxis) * 180.0) / M_PI;
+  
+  Serial.print(pitch);
+  Serial.print("o");
+  Serial.println(roll);
+
+  delay(50);
 
 }
 
