@@ -40,7 +40,7 @@ void setup() {
 
   // For loop to create 4 pinModes
   // (One for every PWM Port)
-  for(int i = 0; i < 4; i++)
+  for(int i = 0; i < sizeof(pwmPorts); i++)
   {
     pinMode(pwmPorts[i], OUTPUT);
   }
@@ -64,8 +64,8 @@ void loop()
     userString = Serial.read();
 
     userInput = userString.toInt();
-    
-    for(int x = 0; x < 4; x++)
+
+    for(int x = 0; x < sizeof(pwmPorts); x++)
     {
       if(x + 48 == userInput){
         RunMotor(x);
@@ -88,7 +88,7 @@ void loop()
 
 
 void RunMotor(int x){
-  //Serial.print("motor running");
+  Serial.print("motor running");
   digitalWrite(pwmPorts[x], HIGH);
   delay(amountOfDelay);
   digitalWrite(pwmPorts[x], LOW);
