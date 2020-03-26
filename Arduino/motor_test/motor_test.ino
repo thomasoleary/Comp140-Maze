@@ -19,9 +19,10 @@ void setup() {
 void loop() {
   if (Serial.available() > 0){
     userInput = Serial.read();
+    Serial.println(userInput);
 
     if(userInput == '1'){
-      Serial.write(userInput);
+      Serial.println("motor1");
       motorOne();
     }
     if(userInput == '2'){

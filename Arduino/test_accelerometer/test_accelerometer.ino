@@ -8,7 +8,7 @@ MPU6050 mpu;
 void setup() {
   // put your setup code here, to run once:
 
-  Serial.begin(115200);
+  Serial.begin(9600);
   // Serial.println("Initialize MPU6050");
 
   while(!mpu.begin(MPU6050_SCALE_2000DPS, MPU6050_RANGE_2G))
