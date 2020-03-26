@@ -65,19 +65,29 @@ void loop()
 
     userInput = userString.toInt();
 
+    // Simple for loop, looping pwmPorts[]
+    // To check if userInput is equal to x
     for(int x = 0; x < sizeof(pwmPorts); x++)
     {
       if(x + 48 == userInput){
+        // Run this function passing the value of x
         RunMotor(x);
       }
     }
     
   }
+
+  // Using the Vector to normalise the values
+  // This function firstly reads all Raw Data from the MPU6050
+  // And sets all Axis to: (X, Y or Z) * MPU6050_RANGE_2G (which is .000061f) * 9.8xxxf
   normalValue = mpu.readNormalizeAccel();
 
+  // Calculates pitch & roll values using the normalised values and trig (Arc Tangents)
   int pitch = -(atan2(normalValue.XAxis, sqrt(normalValue.YAxis * normalValue.YAxis + normalValue.ZAxis * normalValue.ZAxis)) * 180.0) / M_PI;
   int roll = (atan2(normalValue.YAxis, normalValue.ZAxis) * 180.0) / M_PI;
-  
+
+  // Printing pitch & roll values to serial monitor
+  // This is so Unity can read these values
   Serial.print(pitch);
   Serial.print("o");
   Serial.println(roll);
@@ -86,11 +96,12 @@ void loop()
 
 }
 
-
+// RunMotor function
 void RunMotor(int x){
-  Serial.print("motor running");
+  // Serial.print("motor running");
+
+  // Runs the specific pwmPort in the array
   digitalWrite(pwmPorts[x], HIGH);
   delay(amountOfDelay);
   digitalWrite(pwmPorts[x], LOW);
-  //delay(amountOfDelay);
   }
