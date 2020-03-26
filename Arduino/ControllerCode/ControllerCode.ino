@@ -10,40 +10,57 @@
 
 */
 
+// The wire library is used for I2C communication (for the MPU6050)
 #include <Wire.h>
+
+// This MPU6050 library was created by GitHub user jarzebski
+// https://github.com/jarzebski/Arduino-MPU6050
 #include <MPU6050.h>
+
 MPU6050 mpu;
 
+// Creating an array and initialising all PWM ports
+// that the motors are using to it
 int pwmPorts[] = {3, 5, 6, 9};
-int userInput;
-int amountOfDelay = 100;
 
+// String & Integer that will be used for Input from the user
+int userInput;
 String userString;
 
+// Integer that will be used for delay (in milliseconds)
+int amountOfDelay = 100;
+
+// Vector value that is used to get Normalised Values from the MPU6050
 Vector normalValue;
 
 
 void setup() {
+  // Setting the Serial to baud rate of 9600
   Serial.begin(9600);
-  
+
+  // For loop to create 4 pinModes
+  // (One for every PWM Port)
   for(int i = 0; i < 4; i++)
   {
     pinMode(pwmPorts[i], OUTPUT);
   }
-    
+
+  // MPU6050.begin is a bool function
+  // This while loop checks to see if there is an MPU6050 for the library to use
+  // But also resets all ots calibrated and threshold values
+  // Once all tasks are done, the bool is returned as true
   while(!mpu.begin(MPU6050_SCALE_2000DPS, MPU6050_RANGE_2G))
   {
       Serial.println("Could not find a valid MPU6050 sensor, check wiring!");
       delay(500);
   }
-    
-
 }
 
 void loop() 
 {
   if(Serial.available() > 0)
   {
+    // Sets userString to any value typed into the serial monitor
     userString = Serial.read();
 
     userInput = userString.toInt();
