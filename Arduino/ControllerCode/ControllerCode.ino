@@ -1,6 +1,17 @@
-#include <MPU6050.h>
-#include <Wire.h>
+/*
+  * Author = Thomas O'Leary
+  * GitHub Repo = https://www.github.com/thomasoleary/Comp140-Maze
+  * License = GNU GPL 3.0
+  * Copyright = Copyright (c) 2020 <Thomas O'Leary>
+  * Full license agreement can be found in the LICENSE file or at <https://www.gnu.org/licenses/gpl-3.0.html>
 
+  This .ino script is for both calculating the pitch & roll for the MPU6050
+  and for taking input to activate the motors.
+
+*/
+
+#include <Wire.h>
+#include <MPU6050.h>
 MPU6050 mpu;
 
 int pwmPorts[] = {3, 5, 6, 9};
