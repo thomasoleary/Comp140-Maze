@@ -67,7 +67,7 @@ void loop()
 
     // Simple for loop, looping pwmPorts[]
     // To check if userInput is equal to x
-    for(int x = 0; x < sizeof(pwmPorts); x++)
+    for(int x = 0; x < 4; x++)
     {
       if(x + 48 == userInput){
         // Run this function passing the value of x
@@ -98,7 +98,7 @@ void loop()
 
 // RunMotor function
 void RunMotor(int x){
-  // Serial.print("motor running");
+  Serial.print("motor running");
 
   // Runs the specific pwmPort in the array
   digitalWrite(pwmPorts[x], HIGH);
