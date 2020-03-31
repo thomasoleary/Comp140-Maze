@@ -32,8 +32,6 @@ public class Arduino : MonoBehaviour
 
         // Opens the Serial Connection
         serial.Open();
-
-        Debug.Log("Connected to Arduino on port : " + commPort); // Simple Debug.Log that notifies the user that the arduino is connected
     }
 
 

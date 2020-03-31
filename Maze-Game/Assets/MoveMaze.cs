@@ -10,10 +10,20 @@ public class MoveMaze : Arduino
     [SerializeField]
     GameObject maze;
 
+    [SerializeField]
+    GameObject playerBall;
+
+    private void Start()
+    {
+        playerBall = GameObject.FindGameObjectWithTag("Player");
+    }
+
     void Update()
     {
         if (isControllerActive)
         {
+            string indexString = playerBall.GetComponent<BallScript>().arrayIndex.ToString();
+
             string value = ReadFromArduino(50);
 
             if(value != null)
