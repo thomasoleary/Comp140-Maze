@@ -8,7 +8,6 @@ public class BallScript : Arduino
     private GameObject[] TriggerArray = new GameObject[4];
 
     public int arrayIndex;
-
     private void Start()
     {
         TriggerArray = GameObject.FindGameObjectsWithTag("Trigger");
@@ -21,7 +20,8 @@ public class BallScript : Arduino
             if(TriggerArray[x].GetComponent<BallTrigger>().ballTriggered == true)
             {
                 arrayIndex = x;
-                // Debug.Log("Motor " + arrayIndex + " running");
+                break;
+                //Debug.Log("Motor " + arrayIndex + " running");
             }
         }
         

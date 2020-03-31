@@ -22,7 +22,8 @@ public class MoveMaze : Arduino
     {
         if (isControllerActive)
         {
-            string indexString = playerBall.GetComponent<BallScript>().arrayIndex.ToString();
+            //string indexString = playerBall.GetComponent<BallScript>().arrayIndex.ToString();
+            //WriteToArduino(indexString);
 
             string value = ReadFromArduino(50);
 

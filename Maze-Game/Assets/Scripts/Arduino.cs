@@ -30,6 +30,8 @@ public class Arduino : MonoBehaviour
         // ReadTimeout of 50 milliseconds
         serial.ReadTimeout = 50;
 
+        serial.WriteTimeout = 50;
+
         // Opens the Serial Connection
         serial.Open();
     }
@@ -39,8 +41,9 @@ public class Arduino : MonoBehaviour
     // This will be used to activate the motors
     public void WriteToArduino(string motor) // Passes a string
     {
-        serial.WriteLine(motor); // The string that is provided is then written to the Arduino
-        serial.BaseStream.Flush(); // Flush() makes sure that all information in the buffer is sent to its destination
+        Debug.Log(motor);
+        //serial.WriteLine(motor); // The string that is provided is then written to the Arduino
+        //serial.BaseStream.Flush(); // Flush() makes sure that all information in the buffer is sent to its destination
     }
 
     public string ReadFromArduino(int timeout = 0)
