@@ -4,51 +4,27 @@ using UnityEngine;
 
 public class BallScript : Arduino
 {
+    [SerializeField]
+    private GameObject[] TriggerArray = new GameObject[4];
 
-    // Referencing all Trigger colliders on the Ball
-    [SerializeField]
-    GameObject frontTrigger;
-    [SerializeField]
-    GameObject leftTrigger;
-    [SerializeField]
-    GameObject rightTrigger;
-    [SerializeField]
-    GameObject backTrigger;
+    public int arrayIndex;
 
-
-    // Creating booleans for each trigger to reference their individual BallTrigger.cs
-    bool forwardCollision;
-    bool leftCollision;
-    bool rightCollision;
-    bool backwardCollision;
+    private void Start()
+    {
+        TriggerArray = GameObject.FindGameObjectsWithTag("Trigger");
+    }
 
     private void Update()
     {
-        forwardCollision = frontTrigger.GetComponent<BallTrigger>().ballTriggered;
-        leftCollision = leftTrigger.GetComponent<BallTrigger>().ballTriggered;
-        rightCollision = rightTrigger.GetComponent<BallTrigger>().ballTriggered;
-        backwardCollision = backTrigger.GetComponent<BallTrigger>().ballTriggered;
-
-
-        // When a trigger is activated
-        // It writes to the Arduino's serial
-        // This will do a digitalWrite() to activate the assigned motor
-        if (forwardCollision)
+        for(int x = 0; x < 4; x++)
         {
-            WriteToArduino("1"); // Activates front motor
+            if(TriggerArray[x].GetComponent<BallTrigger>().ballTriggered == true)
+            {
+                arrayIndex = x;
+                // Debug.Log("Motor " + arrayIndex + " running");
+            }
         }
-        if (leftCollision)
-        {
-            WriteToArduino("0"); // Activates left motor
-        }
-        if (rightCollision)
-        {
-            WriteToArduino("3"); // Activates right motor
-        }
-        if (backwardCollision)
-        {
-            WriteToArduino("2"); // Activates back motor
-        }
+        
     }
 
 }
