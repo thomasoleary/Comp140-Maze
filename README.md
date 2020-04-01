@@ -13,7 +13,7 @@ The Controller:
 >Built within a small box, the controller uses the MPU6050 accelerometer to calculate pitch and roll! Along with this, it utilises the HC-05 module to allow the controller to be wireless. One additional feature of the controller is that it uses 4 disk motors for the haptic feedback.
 
 ## Sources used to create the project
-###MPU6050 Library created by GitHub user [Jarzebski](https://github.com/jarzebski)
+### MPU6050 Library created by GitHub user [Jarzebski](https://github.com/jarzebski)
 This library was used for calculating the pitch and roll values for my MPU6050 accelerometer.
 This open source library made it much easier for me to obtain correct values from this module.
 [Link to Jarzebski's MPU6050 Repository](https://github.com/jarzebski/Arduino-MPU6050)
