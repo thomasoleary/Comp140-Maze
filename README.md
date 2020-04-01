@@ -5,11 +5,11 @@
 In this assignment, you are required to **create** a game or other playful experience which **interfaces** with a custom controller.
 
 ## The Game and Custom Controller
-[Link to Poster](https://falmouthac-my.sharepoint.com/:b:/r/personal/to231922_falmouth_ac_uk/Documents/Comp140/Part%20B.pdf?csf=1&e=QhmGzC)
+[Link to Poster](https://falmouthac-my.sharepoint.com/:b:/g/personal/to231922_falmouth_ac_uk/EZeDOwO8YDVFvyxCsBz46aEB8YwTxcVb7MkcOF7iX293nQ?e=8NyBYg)
 
-[Link to video explaining the controller and how ControllerCode.ino works with it](https://falmouthac-my.sharepoint.com/:v:/r/personal/to231922_falmouth_ac_uk/Documents/Comp140/Controller%20Video.mp4?csf=1&e=iw7OoS)
+[Link to video explaining the controller and how ControllerCode.ino works with it](https://falmouthac-my.sharepoint.com/:v:/g/personal/to231922_falmouth_ac_uk/EdFPELcPxpJFi2WVFgLYY_wBcsw6_lXi3GwIXwSzaXPp2g?e=8HNG8A)
 
-[Link to video showing the controller in action in Unity](https://falmouthac-my.sharepoint.com/:v:/r/personal/to231922_falmouth_ac_uk/Documents/Comp140/Unity%20Video.mp4?csf=1&e=SCkbQr)
+[Link to video showing the controller in action in Unity](https://falmouthac-my.sharepoint.com/:v:/g/personal/to231922_falmouth_ac_uk/EUm7oQFoZ8FLkJCMd4hDfDwB3wzKvoxXaYpOBSu0ZsaC8g?e=WO7W0d)
 
 The Game:
 > Maze Roller is a simple game in which the player has to roll a ball through a maze from its start to finish!
