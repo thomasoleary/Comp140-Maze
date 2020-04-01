@@ -41,7 +41,8 @@ public class ArduinoScript : MonoBehaviour
     // Create a new array with the size of 4
     private GameObject[] TriggerArray = new GameObject[4];
     // This integer will be passed to WriteToArduino()
-    public int arrayIndex = 5; 
+    public int arrayIndex = 5;
+    private string indexString;
 
     void Start()
     {
@@ -58,6 +59,7 @@ public class ArduinoScript : MonoBehaviour
     {
         if (isControllerActive)
         {
+            //arrayIndex = 5;
             /*
             // For loop to loop around TriggerArray
             for (int x = 0; x < 4; x++)
@@ -164,6 +166,7 @@ public class ArduinoScript : MonoBehaviour
 
     IEnumerator ActivateMotor()
     {
+        
         // For loop to loop around TriggerArray
         for (int x = 0; x < 4; x++)
         {
@@ -171,16 +174,19 @@ public class ArduinoScript : MonoBehaviour
             if (TriggerArray[x].GetComponent<BallTrigger>().ballTriggered == true)
             {
                 arrayIndex = x; // This integer will be passed to WriteToArduino
+                indexString = playerBall.GetComponent<BallScript>().arrayIndex.ToString();
+                arrayIndex = 5;
                 break;
                 //Debug.Log("Motor " + arrayIndex + " running");
             }
         }
 
         // Converting arrayIndex to a string
-        string indexString = playerBall.GetComponent<BallScript>().arrayIndex.ToString();
+        
 
         // Write to the COM port
         WriteToArduino(indexString);
+        indexString = "";
         yield return new WaitForSeconds(0.5f);
     }
 }
