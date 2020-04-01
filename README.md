@@ -1,2 +1,4 @@
-# Comp140-Maze
-GitHub Repo for my COMP140 Arduino Maze Game
+# Comp140 Assignment 1
+[Link to the GitHub Repository](https://github.com/thomasoleary/Comp140-Maze)
+
+
