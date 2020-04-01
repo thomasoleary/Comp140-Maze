@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BallTrigger : MonoBehaviour
-{
-    // This is a script that applies to all triggers
-    // that are children of the Ball object
-
-    // Creating a public bool that will be accessed in BallScript.cs
-    // This bool will vary on each trigger
-    // Allowing the arduino to activate the different motors
+{    
+    /*
+        * Author = Thomas O'Leary
+        * GitHub Repo = https://www.github.com/thomasoleary/Comp140-Maze
+        * License = GNU GPL 3.0
+        * Copyright = Copyright (c) 2020 <Thomas O'Leary>
+        * Full license agreement can be found in the LICENSE file or at <https://www.gnu.org/licenses/gpl-3.0.html>
+         
+    */
 
     // Automatically set to false (otherwise the motor will turn on instantly)
     public bool ballTriggered = false;
