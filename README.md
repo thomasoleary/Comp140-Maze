@@ -5,6 +5,8 @@
 In this assignment, you are required to **create** a game or other playful experience which **interfaces** with a custom controller.
 
 ## The Game and Custom Controller
+[Link to Poster](https://falmouthac-my.sharepoint.com/:b:/r/personal/to231922_falmouth_ac_uk/Documents/Comp140/Part%20B.pdf?csf=1&e=QhmGzC)
+
 The Game:
 > Maze Roller is a simple game in which the player has to roll a ball through a maze from its start to finish!
 >To do this, all the player needs to do is tilt the controller! If the ball collides with a wall, a small haptic vibration alerts the player!
