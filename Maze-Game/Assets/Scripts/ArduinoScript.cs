@@ -22,6 +22,8 @@ public class ArduinoScript : MonoBehaviour
     [SerializeField]
     // Integer to specify which COM Port the Arduino is connected to
     int commPort;
+    [SerializeField]
+    int baudRate;
     private SerialPort serial = null; 
 
 
@@ -56,6 +58,7 @@ public class ArduinoScript : MonoBehaviour
     {
         if (isControllerActive)
         {
+            /*
             // For loop to loop around TriggerArray
             for (int x = 0; x < 4; x++)
             {
@@ -73,6 +76,9 @@ public class ArduinoScript : MonoBehaviour
             
             // Write to the COM port
             WriteToArduino(indexString);
+            */
+            StartCoroutine("ActivateMotor");
+            StopCoroutine("ActivateMotor");
 
             // Read from Arduino and apply it to value
             string value = ReadFromArduino(50);
@@ -98,7 +104,7 @@ public class ArduinoScript : MonoBehaviour
     void ConnectToSerial()
     {
         // Simple function that connects to the desired COM Port
-        serial = new SerialPort("\\\\.\\COM" + commPort, 9600);
+        serial = new SerialPort("\\\\.\\COM" + commPort, baudRate);
         serial.ReadTimeout = 50;
         serial.WriteTimeout = 50;
         serial.Open();
@@ -154,5 +160,27 @@ public class ArduinoScript : MonoBehaviour
     float RemapValues(float value, float from1, float to1, float from2, float to2)
     {
         return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
+    }
+
+    IEnumerator ActivateMotor()
+    {
+        // For loop to loop around TriggerArray
+        for (int x = 0; x < 4; x++)
+        {
+            // If any of the Triggers are set to true
+            if (TriggerArray[x].GetComponent<BallTrigger>().ballTriggered == true)
+            {
+                arrayIndex = x; // This integer will be passed to WriteToArduino
+                break;
+                //Debug.Log("Motor " + arrayIndex + " running");
+            }
+        }
+
+        // Converting arrayIndex to a string
+        string indexString = playerBall.GetComponent<BallScript>().arrayIndex.ToString();
+
+        // Write to the COM port
+        WriteToArduino(indexString);
+        yield return new WaitForSeconds(0.5f);
     }
 }

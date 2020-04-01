@@ -918,9 +918,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commPort: 5
+  baudRate: 115200
   isControllerActive: 1
   maze: {fileID: 170326083}
-  playerBall: {fileID: 1446183738}
   TriggerArray:
   - {fileID: 0}
   - {fileID: 0}
