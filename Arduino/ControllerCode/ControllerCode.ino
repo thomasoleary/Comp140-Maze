@@ -35,8 +35,8 @@ Vector normalValue;
 
 
 void setup() {
-  // Setting the Serial to baud rate of 9600
-  Serial.begin(9600);
+  // Setting the Serial to baud rate of 115200
+  Serial.begin(115200);
 
   // For loop to create 4 pinModes
   // (One for every PWM Port)
@@ -92,7 +92,7 @@ void loop()
   Serial.print("o");
   Serial.println(roll);
 
-  delay(50);
+  delay(amountOfDelay);
 
 }
 
