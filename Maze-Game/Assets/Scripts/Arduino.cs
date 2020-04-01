@@ -4,7 +4,7 @@ using System.IO.Ports;
 using System.Collections;
 
 public class Arduino : MonoBehaviour
-{    
+{
     /*
         * Author = Thomas O'Leary
         * GitHub Repo = https://www.github.com/thomasoleary/Comp140-Maze
@@ -12,6 +12,11 @@ public class Arduino : MonoBehaviour
         * Copyright = Copyright (c) 2020 <Thomas O'Leary>
         * Full license agreement can be found in the LICENSE file or at <https://www.gnu.org/licenses/gpl-3.0.html>
         
+        *** DISCLAIMER ***
+        Originally, Arduino.cs, MoveMaze.cs and BallScript.cs were to work separately
+        Due to complications with Reading and writing at the same time - I created ArduinoScript.cs
+        ArduinoScript.cs has the functionality of all three scripts combined into one
+
         Script that connects to, reads & writes to Arduino
     */
 

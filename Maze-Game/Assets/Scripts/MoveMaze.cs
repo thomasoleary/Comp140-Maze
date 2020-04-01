@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveMaze : Arduino
-{    
+{
     /*
         * Author = Thomas O'Leary
         * GitHub Repo = https://www.github.com/thomasoleary/Comp140-Maze
@@ -11,6 +11,12 @@ public class MoveMaze : Arduino
         * Copyright = Copyright (c) 2020 <Thomas O'Leary>
         * Full license agreement can be found in the LICENSE file or at <https://www.gnu.org/licenses/gpl-3.0.html>
          
+        *** DISCLAIMER ***
+        Originally, Arduino.cs, MoveMaze.cs and BallScript.cs were to work separately
+        Due to complications with Reading and writing at the same time - I created ArduinoScript.cs
+        ArduinoScript.cs has the functionality of all three scripts combined into one
+
+        Script that reads the pitch and roll values that are given from the Arduino
     */
 
     [SerializeField]
