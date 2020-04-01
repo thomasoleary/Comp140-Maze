@@ -18,5 +18,5 @@ This library was used for calculating the pitch and roll values for my MPU6050 a
 This open source library made it much easier for me to obtain correct values from this module.
 [Link to Jarzebski's MPU6050 Repository](https://github.com/jarzebski/Arduino-MPU6050)
 
-### License Justification
+## License Justification
 I have chosen to use the GNU GPL-3.0 licesnse as I felt it was the best for my needs. I had decided that I wanted my code to be open source but to whoever will want to use this code, will have to reference myself and the GNU GPL-3.0 license in their work. This license also makes sure that I am not liable for any errors or bugs that may be within the repository.
