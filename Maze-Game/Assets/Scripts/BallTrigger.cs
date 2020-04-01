@@ -11,6 +11,11 @@ public class BallTrigger : MonoBehaviour
         * Copyright = Copyright (c) 2020 <Thomas O'Leary>
         * Full license agreement can be found in the LICENSE file or at <https://www.gnu.org/licenses/gpl-3.0.html>
          
+        This script allows me to check for collisions
+        (regarding the GameObjects that this script is connected to)
+
+        Then ArduinoScript will check the ballTriggered boolean
+
     */
 
     // Automatically set to false (otherwise the motor will turn on instantly)

@@ -12,6 +12,7 @@ public class MoveMaze : Arduino
         * Full license agreement can be found in the LICENSE file or at <https://www.gnu.org/licenses/gpl-3.0.html>
          
     */
+
     [SerializeField]
     bool isControllerActive;
 
