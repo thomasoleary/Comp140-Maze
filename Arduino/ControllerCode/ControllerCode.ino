@@ -98,7 +98,7 @@ void loop()
 
 // RunMotor function
 void RunMotor(int x){
-  Serial.print("motor running");
+  // Serial.print("motor running");
 
   // Runs the specific pwmPort in the array
   digitalWrite(pwmPorts[x], HIGH);
