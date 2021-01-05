@@ -59,31 +59,9 @@ public class ArduinoScript : MonoBehaviour
     {
         if (isControllerActive)
         {
-            //arrayIndex = 5;
-            /*
-            // For loop to loop around TriggerArray
-            for (int x = 0; x < 4; x++)
-            {
-                // If any of the Triggers are set to true
-                if (TriggerArray[x].GetComponent<BallTrigger>().ballTriggered == true) 
-                {
-                    arrayIndex = x; // This integer will be passed to WriteToArduino
-                    break;
-                    //Debug.Log("Motor " + arrayIndex + " running");
-                }
-            }
-
-            // Converting arrayIndex to a string
-            string indexString = playerBall.GetComponent<BallScript>().arrayIndex.ToString();
-            
-            // Write to the COM port
-            WriteToArduino(indexString);
-            */
-            StartCoroutine("ActivateMotor");
-            StopCoroutine("ActivateMotor");
 
             // Read from Arduino and apply it to value
-            string value = ReadFromArduino(50);
+            string value = ReadFromArduino(10);
 
             // This splits the Accelerometer values provided from the Arduino
             // In ControllerCode.ino it prints them as "PitchValueoRollValue"
@@ -190,3 +168,25 @@ public class ArduinoScript : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
     }
 }
+//arrayIndex = 5;
+            /*
+            // For loop to loop around TriggerArray
+            for (int x = 0; x < 4; x++)
+            {
+                // If any of the Triggers are set to true
+                if (TriggerArray[x].GetComponent<BallTrigger>().ballTriggered == true) 
+                {
+                    arrayIndex = x; // This integer will be passed to WriteToArduino
+                    break;
+                    //Debug.Log("Motor " + arrayIndex + " running");
+                }
+            }
+
+            // Converting arrayIndex to a string
+            string indexString = playerBall.GetComponent<BallScript>().arrayIndex.ToString();
+            
+            // Write to the COM port
+            WriteToArduino(indexString);
+            */
+            //StartCoroutine("ActivateMotor");
+            //StopCoroutine("ActivateMotor");

@@ -917,7 +917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4746a60d271a75840b5fa484de5a8310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  commPort: 5
+  commPort: 3
   baudRate: 115200
   isControllerActive: 1
   maze: {fileID: 170326083}
